@@ -1,0 +1,25 @@
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: monospace;
+  
+  --color-brand-primary: #292a33;
+  --color-ui-white: #fcfcfa;
+}
+
+// Small devices
+@mixin test {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin tablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+p {
+  margin: 0
+}

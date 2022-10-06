@@ -1,0 +1,59 @@
+.af-featured-product-tout {
+  position: relative;
+  display: flex;
+  width: 100%;
+  .af-tout-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin: 0 40px;
+
+    .af-tout-eyebrow {
+      font-family: var(--font-secondary);
+      font-size: 15px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .af-tout-headline {
+      font-family: var(--font-secondary);
+      font-size: 45px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .af-tout-subcopy {
+      font-family: var(--font-primary);
+      margin-bottom: 20px;
+    }
+
+    .af-tout-cta-group {
+      display: flex;
+      .af-tout-cta {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .af-tout-image-container {
+    display: flex;
+
+    .af-tout-image {
+      height: 70%;
+      padding-right: 20px;
+    }
+  }
+
+  .af-tout-background {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 768px) {
+      position: relative;
+      object-fit: contain;
+    }
+  }
+}

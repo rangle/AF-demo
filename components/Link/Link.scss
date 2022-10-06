@@ -1,0 +1,24 @@
+.af-link {
+  font-family: var(--font-primary);
+  text-decoration: none;
+  padding: 6px 30px;
+  display: inline-block;
+  text-align: center;
+  
+  &[data-variant="primary"] {
+    background-color: var(--color-ui-white);
+    color: var(--color-brand-primary);
+    border-radius: 50px;
+  }
+
+  &[data-variant="secondary"] {
+    color: var(--color-brand-primary);
+    border-radius: 50px;
+    border: 2px solid var(--color-brand-primary);
+
+    &:hover {
+      background-color: var(--color-brand-primary);
+      color: var(--color-ui-white);
+    }
+  }
+}
