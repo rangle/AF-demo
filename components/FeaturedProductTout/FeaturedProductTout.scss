@@ -2,12 +2,73 @@
   position: relative;
   display: flex;
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .af-tout-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .af-tout-image-group {
+      display: flex;
+      flex: 2;
+      width: 55%;
+      margin: 40px 0;
+      margin-left: auto;
+      margin-right: 0;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      .af-tout-image-container{
+        z-index: 2;
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        @media screen and (max-width: 768px) {
+          padding-left: 20px;
+        }
+  
+        .af-tout-image {
+          width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  
+    .af-tout-background {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+  
+      // @media screen and (max-width: 768px) {
+      //   position: relative;
+      //   height: auto;
+      //   object-fit: none;
+      // }
+    }
+  }
+
   .af-tout-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    margin: 0 40px;
+    margin: 40px;
+    position: absolute;
+    width: 35%;
+
+    @media screen and (max-width: 768px) {
+      position: relative;
+      width: 100%;
+    }
 
     .af-tout-eyebrow {
       font-family: var(--font-secondary);
@@ -21,7 +82,11 @@
       font-size: 45px;
       margin-top: 0;
       margin-bottom: 20px;
-      color: red;
+
+      @media screen and (max-width: 1280px) {
+        position: relative;
+        font-size: 30px;
+      }
     }
 
     .af-tout-subcopy {
@@ -34,28 +99,6 @@
       .af-tout-cta {
         margin-right: 6px;
       }
-    }
-  }
-
-  .af-tout-image-container {
-    display: flex;
-    flex: 2;
-
-    .af-tout-image {
-      height: 70%;
-      padding-right: 20px;
-    }
-  }
-
-  .af-tout-background {
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    @media screen and (max-width: 768px) {
-      position: relative;
     }
   }
 }

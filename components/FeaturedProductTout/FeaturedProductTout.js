@@ -17,7 +17,21 @@ export const FeaturedProductTout = ({
 }) => {
   return (
     <div className="af-featured-product-tout">
-      <img className="af-tout-background" src={backgroundImage} />
+      <div className="af-tout-container">
+        <img className="af-tout-background" src={backgroundImage} />
+        <div className="af-tout-image-group">
+          {primaryOverlayImage && (
+            <div className="af-tout-image-container">
+              <img className="af-tout-image" src={primaryOverlayImage} />
+            </div>
+          )}
+          {secondaryOverlayImage && (
+            <div className="af-tout-image-container">
+              <img className="af-tout-image" src={secondaryOverlayImage} />
+            </div>
+          )}
+        </div>
+      </div>
       <div className="af-tout-content">
         <p className="af-tout-eyebrow">{eyebrow}</p>
         <p className="af-tout-headline">{headline}</p>
@@ -42,14 +56,6 @@ export const FeaturedProductTout = ({
             </div>
           )}
         </div>
-      </div>
-      <div className="af-tout-image-container">
-        {primaryOverlayImage && (
-          <img className="af-tout-image" src={primaryOverlayImage} />
-        )}
-        {secondaryOverlayImage && (
-          <img className="af-tout-image" src={secondaryOverlayImage} />
-        )}
       </div>
     </div>
   );
