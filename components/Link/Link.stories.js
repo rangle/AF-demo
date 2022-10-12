@@ -6,7 +6,8 @@ export default {
   component: Link,
   argTypes: {
     variant: {
-      options: ["primary", "secondary"],
+      options: ["secondary", "tertiary"],
+      control: { type: "select" },
     },
   },
 };
@@ -18,3 +19,7 @@ export const Primary = ({ variant }) => (
     url="https://www.hollisterco.com/shop/ca"
   ></Link>
 );
+
+Primary.args = {
+  variant: "secondary",
+};

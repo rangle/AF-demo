@@ -5,20 +5,20 @@
   display: inline-block;
   text-align: center;
   
-  &[data-variant="primary"] {
-    background-color: var(--color-ui-white);
-    color: var(--color-brand-primary);
-    border-radius: 50px;
+  &[data-variant="secondary"] {
+    background-color: var(--secondary-button-bg-color);
+    color: var(--secondary-button-color);
+    border-radius: var(--button-border-radius);
   }
 
-  &[data-variant="secondary"] {
-    color: var(--color-brand-primary);
-    border-radius: 50px;
-    border: 2px solid var(--color-brand-primary);
+  &[data-variant="tertiary"] {
+    color: var(--tertiary-button-color);
+    border-radius: var(--button-border-radius);
+    border: var(--tertiary-button-border);
 
     &:hover {
-      background-color: var(--color-brand-primary);
-      color: var(--color-ui-white);
+      background-color: var(--tertiary-button-hover-bg-color);
+      color: var(--tertiary-button-hover-color);
     }
   }
 }

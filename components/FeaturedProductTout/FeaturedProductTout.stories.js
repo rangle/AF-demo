@@ -6,7 +6,8 @@ export default {
   component: FeaturedProductTout,
   argTypes: {
     ctaVariant: {
-      options: ["primary", "secondary"],
+      options: ["secondary", "tertiary"],
+      control: { type: "select" },
     },
   },
 };
@@ -46,7 +47,7 @@ Default.args = {
   headline: "YOUR GUIDE TO FALL LAYERS",
   subcopy:
     "Shackets, flannels, zip-ups, jackets & every layer you could possibly need to complete your fall looks.",
-  ctaVariant: "primary",
+  ctaVariant: "secondary",
   primaryCtaLabel: "Shop Women's",
   primaryCtaUrl: "primaryCtaLabel",
   secondaryCtaLabel: "Shop Men's",

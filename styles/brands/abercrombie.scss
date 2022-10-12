@@ -1,0 +1,19 @@
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: monospace;
+  
+  --color-brand-primary: #292a33;
+  --color-ui-white: #fcfcfa;
+
+  --border-radius-none: 0px;
+  --border-radius-max: 9999px;
+
+  --button-border-radius: var(--border-radius-none);
+  --secondary-button-bg-color: var(--color-ui-white);
+  --secondary-button-color: var(--color-brand-primary);
+
+  --tertiary-button-color: var(--color-brand-primary);
+  --tertiary-button-border: 2px solid var(--color-brand-primary);
+  --tertiary-button-hover-bg-color: var(--color-brand-primary);
+  --tertiary-button-hover-color: var(--color-ui-white);
+}

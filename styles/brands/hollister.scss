@@ -1,40 +1,19 @@
 :root {
-  // Default Font
   --font-primary: sans-serif;
   --font-secondary: monospace;
   
-  // Default Color
   --color-brand-primary: #292a33;
-  --color-white-medium: #fcfcfa;
+  --color-ui-white: #fcfcfa;
 
-  // Default Radius
   --border-radius-none: 0px;
   --border-radius-max: 9999px;
 
-  // Button Tokens
   --button-border-radius: var(--border-radius-max);
-  --secondary-button-bg-color: var(--color-white-medium);
+  --secondary-button-bg-color: var(--color-ui-white);
   --secondary-button-color: var(--color-brand-primary);
+
   --tertiary-button-color: var(--color-brand-primary);
   --tertiary-button-border: 2px solid var(--color-brand-primary);
   --tertiary-button-hover-bg-color: var(--color-brand-primary);
-  --tertiary-button-hover-color: var(--color-white-medium);
-}
-
-// Small devices
-@mixin test {
-  @media screen and (max-width: 768px) {
-    @content;
-  }
-}
-
-// Medium devices
-@mixin tablet {
-  @media screen and (max-width: 1280px) {
-    @content;
-  }
-}
-
-p {
-  margin: 0
+  --tertiary-button-hover-color: var(--color-ui-white);
 }
