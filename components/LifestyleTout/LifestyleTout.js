@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { theme, mq } from "../../styles/theme";
+import { mq } from "../../styles/theme";
+import tokens from "../../styles/tokens.json";
 import { Link } from "../Link/Link";
 
 const StyledContainer = styled.div`
@@ -11,34 +12,55 @@ const StyledBackgroundImage = styled.img`
   width: 100%;
 `;
 
-const StyledCopyContainer = styled.div`
-  ${mq({
+const StyledCopyContainer = styled.div(({ copyAlignment, contentPosition }) =>
+  mq({
     position: ["relative", "absolute"],
-    width: ["100%", "40%"],
-  })}
-  top: 0;
-  right: 0;
-`;
+    width: ["auto", "40%"],
+    top: [0, "50%"],
+    right: contentPosition === "right" ? 0 : "auto",
+    left: contentPosition === "center" ? "50%" : "auto",
+    transform: [
+      "none",
+      contentPosition === "center"
+        ? "translate(-50%, -50%)"
+        : "translatey(-50%)",
+    ],
+    padding: "20px",
+    textAlign: copyAlignment,
+  })
+);
 
 const StyledEyebrow = styled.p`
   ${mq({
-    fontSize: theme.fontSize.small,
+    fontSize: tokens.global.fontSize.small.value,
   })}
-  font-family: ${theme.fontFamily.secondary}
+  font-family: ${tokens.global.fontFamily.secondary.value};
+  margin-bottom: 10px;
 `;
 
 const StyledHeadline = styled.p`
   ${mq({
-    fontSize: theme.fontSize.large,
+    fontSize: tokens.global.fontSize.large.value,
   })}
-  font-family: ${theme.fontFamily.secondary}
+  font-family: ${tokens.global.fontFamily.secondary.value};
+  margin-bottom: 20px;
 `;
 
 const StyledSubcopy = styled.p`
   ${mq({
-    fontSize: theme.fontSize.medium,
+    fontSize: tokens.global.fontSize.medium.value,
   })}
-  font-family: ${theme.fontFamily.primary}
+  font-family: ${tokens.global.fontFamily.primary.value};
+  margin-bottom: 20px;
+`;
+
+const StyledCtaContainer = styled.div(({ copyAlignment }) => ({
+  justifyContent: copyAlignment,
+  display: "flex",
+}));
+
+const StyledPrimaryCtaContainer = styled.div`
+  margin-right: 6px;
 `;
 
 export const LifestyleTout = ({
@@ -51,23 +73,28 @@ export const LifestyleTout = ({
   primaryCtaUrl,
   secondaryCtaLabel,
   secondaryCtaUrl,
+  copyAlignment = "left",
+  contentPosition = "center",
 }) => {
   return (
     <StyledContainer>
       <StyledBackgroundImage src={backgroundImage} />
-      <StyledCopyContainer>
+      <StyledCopyContainer
+        copyAlignment={copyAlignment}
+        contentPosition={contentPosition}
+      >
         <StyledEyebrow>{eyebrow}</StyledEyebrow>
         <StyledHeadline>{headline}</StyledHeadline>
         <StyledSubcopy>{subcopy}</StyledSubcopy>
-        <div>
+        <StyledCtaContainer copyAlignment={copyAlignment}>
           {primaryCtaLabel && (
-            <div>
+            <StyledPrimaryCtaContainer>
               <Link
                 variant={ctaVariant}
                 label={primaryCtaLabel}
                 url={primaryCtaUrl}
               ></Link>
-            </div>
+            </StyledPrimaryCtaContainer>
           )}
           {secondaryCtaLabel && (
             <div>
@@ -78,7 +105,7 @@ export const LifestyleTout = ({
               ></Link>
             </div>
           )}
-        </div>
+        </StyledCtaContainer>
       </StyledCopyContainer>
     </StyledContainer>
   );

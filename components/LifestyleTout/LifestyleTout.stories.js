@@ -9,6 +9,14 @@ export default {
       options: ["secondary", "tertiary"],
       control: { type: "select" },
     },
+    copyAlignment: {
+      options: ["left", "right", "center"],
+      control: { type: "select" },
+    },
+    contentPosition: {
+      options: ["left", "right", "center"],
+      control: { type: "select" },
+    },
   },
 };
 
@@ -22,6 +30,8 @@ export const Default = ({
   secondaryCtaLabel,
   secondaryCtaUrl,
   backgroundImage,
+  copyAlignment,
+  contentPosition,
 }) => (
   <LifestyleTout
     backgroundImage={backgroundImage}
@@ -33,6 +43,8 @@ export const Default = ({
     primaryCtaUrl={primaryCtaUrl}
     secondaryCtaLabel={secondaryCtaLabel}
     secondaryCtaUrl={secondaryCtaUrl}
+    copyAlignment={copyAlignment}
+    contentPosition={contentPosition}
   ></LifestyleTout>
 );
 
@@ -48,4 +60,6 @@ Default.args = {
   primaryCtaUrl: "primaryCtaLabel",
   secondaryCtaLabel: "Shop Men's",
   secondaryCtaUrl: "secondaryCtaUrl",
+  copyAlignment: "left",
+  contentPosition: "right",
 };
